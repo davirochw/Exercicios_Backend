@@ -25,6 +25,9 @@ namespace Ex07.src
             Dependentes = dependentes;
         }
 
+        public Cliente() { 
+        }
+
         public bool VerificaNome(string nome)
         {
             if (nome.Length < 5)
