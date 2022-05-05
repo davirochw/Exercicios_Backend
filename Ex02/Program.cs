@@ -1,8 +1,8 @@
 ﻿using Ex02.src;
 
-Console.WriteLine("Digite o valor de X: ");
+Console.WriteLine("Digite o ponto X: ");
 double x = int.Parse(Console.ReadLine());
-Console.WriteLine("Digite o valor de Y: ");
+Console.WriteLine("Digite o ponto Y: ");
 double y = int.Parse(Console.ReadLine());
 
 Vertice vertice = new Vertice(x,y);

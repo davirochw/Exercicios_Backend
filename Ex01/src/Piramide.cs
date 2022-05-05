@@ -14,7 +14,7 @@ namespace Ex01.src
         {
             n = num;
         }
-        public void Desenha()
+        public void desenha()
         {
 
             int count = 0;
