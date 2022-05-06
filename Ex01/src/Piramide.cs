@@ -8,12 +8,32 @@ namespace Ex01.src
 {
     internal class Piramide
     {
-        public int n;
+        private int n;
 
-        public Piramide(int num)
-        {
-            n = num;
+        public int N
+        { 
+          get
+            {
+                return n;
+            }  
+
+          set
+            {
+                if (value <= 0)
+                {
+                    throw new SystemException();
+                } else
+                {
+                    n = value;
+                }
+            }
         }
+
+        public Piramide(int n)
+        {
+            this.N = n;
+        }
+
         public void desenha()
         {
 

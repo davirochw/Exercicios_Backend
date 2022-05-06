@@ -3,27 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// using Ex02.src;
+using Ex02.src;
 
 namespace Ex03.src
 {
     internal class Triangulo
     {
-        //public Vertice vertice1 { get; private set }
-        //public Vertice vertice2 { get; private set }
-        //public Vertice vertice3 { get; private set }
+        private double x;
+        private double y;
 
-        //public void verificaSeEhIgual()
-        //{
+        public double X
+        {
+            get
+            {
+                return x;
+            }
+            set
+            {
+                x = value;
+            }
+        }
+        public double Y
+        {
+            get
+            {
+                return y;
+            }
+            set
+            {
+                y = value;
+            }
+        }
 
-        //}
-
-        //enum Tipo : int
-        //{
-        //Equilatero,
-        //Isosceles,
-        //Escaleno
-        //}
+        public Triangulo(double x, double y)
+        {
+            Vertice vertice = new Vertice(x, y);
+        }
 
     }
 }

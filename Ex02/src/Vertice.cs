@@ -6,39 +6,66 @@ using System.Threading.Tasks;
 
 namespace Ex02.src
 {
-    internal class Vertice
+    public class Vertice
     {
-        public double x { get; private set; }
-        public double y { get; private set; }
-
-        public Vertice(double novoX, double novoY)
+        private double x;
+        private double y;
+        public double X
         {
-            x = novoX;
-            y = novoY;
+            get 
+            {
+                return x; 
+            }
+            set 
+            { 
+                x = value; 
+            }
+        }
+        public double Y
+        {
+            get
+            {
+                return y;
+            }
+            set
+            {
+                y = value;
+            }
         }
 
-        public void Distancia()
+        public Vertice(double x1, double x2, double y1, double y2)
         {
-            double distanciaEuclidiana = Math.Sqrt(Math.Pow((x-y), 2));
+            this.x = x1 - x2;
+            this.y = y1 - y2;
+        }
+
+        public Vertice(double x, double y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public void distancia()
+        {
+            double distanciaEuclidiana = Math.Sqrt(Math.Pow(this.x, 2) + Math.Pow(this.y, 2));
             Console.WriteLine("\nDistancia euclidiana: {0}", distanciaEuclidiana);
         }
 
-        public void Move()
+        public void move(double x1, double x2, double y1, double y2)
         {
-            Console.WriteLine("Digite o ponto x: ");
-            double novoX = double.Parse(Console.ReadLine()); ;
-            Console.WriteLine("Digite o ponto x: ");
-            double novoY = double.Parse(Console.ReadLine()); ;
+            double auxiliarX = x1;
+            double auxiliarY = y1;
+            x1 = x2;
+            x2 = auxiliarX;
+            y1 = y2;
+            y2 = auxiliarY;
 
-            x = novoX;
-            y = novoY;
-
-            Console.WriteLine("\nX: {0}, Y: {1}", novoX, novoY);
+            Console.WriteLine("\nPrimeiro X: {0}, Primeiro Y: {1}, Segundo X: {2}, Segundo Y: {3}", x1, y1, x2, y2);
         }
 
-        public void VerificaVertice()
+        public void verificaVertice(double x1, double x2, double y1, double y2)
         {
-            if (x == y)
+            if (x1.Equals(x2) && y1.Equals(y2))
             {
                 Console.WriteLine("\nOs vertices são iguais");
             }

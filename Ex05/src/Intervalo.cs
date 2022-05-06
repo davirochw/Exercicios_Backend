@@ -31,7 +31,7 @@ namespace Ex05.src
 
         public bool Igual(Intervalo outroIntervalo)
         {
-            if (this.dataInicial == outroIntervalo.dataInicial && this.dataFinal == outroIntervalo.dataFinal)
+            if (this.dataInicial.Equals(outroIntervalo.dataInicial) && this.dataFinal.Equals(outroIntervalo.dataFinal))
             {
                 Console.WriteLine("Intervalos iguais");
                 return true;
