@@ -12,13 +12,13 @@ while (n > 0)
 
     if (cliente.VerificaNome(nome) == false)
     {
-        break;
+        continue;
     }
 
     Console.Write("Digite o CPF do cliente: ");
     long cpf = long.Parse(Console.ReadLine());
 
-    Console.Write("Digite a data de nascimento do cliente: ");
+    Console.Write("Digite a data de nascimento do cliente: [DD/MM/YYYY]");
     DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
 
     if (cliente.VerificaDataNascimento(dataNascimento) == false)
@@ -29,19 +29,26 @@ while (n > 0)
     Console.Write("Digite a renda mensal do cliente: ");
     float rendaMensal = float.Parse(Console.ReadLine());
 
-    Console.Write("Digite o estado civil do cliente: ");
+    Console.Write("Digite o estado civil do cliente: [S, C, V, D]");
     char estadoCivil = char.Parse(Console.ReadLine());
 
-    if (cliente.VerificaEstadoCivil(estadoCivil) == false)
+    if (cliente.VerificaEstadoCivil(estadoCivil) == true)
     {
         break;
     }
 
     Console.Write("Digite o número de dependentes do cliente: ");
     int dependentes = int.Parse(Console.ReadLine());
+
+    if (cliente.VerificaDependentes(dependentes) == false)
+    {
+        break;
+    }
+
     n--;
 
     Cliente cliente1 = new Cliente(nome, cpf, dataNascimento, rendaMensal, estadoCivil, dependentes);
     Console.WriteLine("Cliente adicionado com sucesso!");
 
+    cliente1.InformacoesCliente();
 }

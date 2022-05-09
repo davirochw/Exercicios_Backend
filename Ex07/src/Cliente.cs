@@ -8,21 +8,21 @@ namespace Ex07.src
 {
     internal class Cliente
     {
-        public string Nome { get; set; }
-        public long CPF { get; set; }
-        public DateTime DataNascimento { get; set; }
-        public float RendaMensal { get; set; }
-        public char EstadoCivil { get; set; }
-        public int Dependentes { get; set; }
+        public string nome { get; set; }
+        public long cpf { get; set; }
+        public DateTime dataNascimento { get; set; }
+        public float rendaMensal { get; set; }
+        public char estadoCivil { get; set; }
+        public int dependentes { get; set; }
 
         public Cliente(string nome, long cpf, DateTime dataNascimento, float rendaMensal, char estadoCivil, int dependentes)
         {
-            Nome = nome;
-            CPF = cpf;
-            DataNascimento = dataNascimento;
-            RendaMensal = rendaMensal;
-            EstadoCivil = estadoCivil;
-            Dependentes = dependentes;
+            this.nome = nome;
+            this.cpf = cpf;
+            this.dataNascimento = dataNascimento;
+            this.rendaMensal = rendaMensal;
+            this.estadoCivil = estadoCivil;
+            this.dependentes = dependentes;
         }
 
         public Cliente() { 
@@ -60,12 +60,34 @@ namespace Ex07.src
 
         public bool VerificaEstadoCivil(char estadoCivil)
         {
-            if (estadoCivil != 'S' || estadoCivil != 'C' || estadoCivil != 'V' || estadoCivil != 'd' || estadoCivil != 's' || estadoCivil != 'c' || estadoCivil != 'v' || estadoCivil != 'd')
+            if (estadoCivil != 'S' || estadoCivil != 'C' || estadoCivil != 'V' || estadoCivil != 'D' || estadoCivil != 's' || estadoCivil != 'c' || estadoCivil != 'v' || estadoCivil != 'd')
+            {
+                return false;
+            } else
             {
                 Console.WriteLine("Estado civil inválido!");
-                return false;
+                return true;
             }
-            return true;
+        }
+
+        public bool VerificaDependentes(int dependentes)
+        {
+            if (dependentes >= 0 && dependentes <= 10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void InformacoesCliente()
+        {
+            Console.WriteLine("--- CLIENTE ---" +
+                "\nNome: {0}" +
+                "\nCPF: {1}" +
+                "\nData de Nascimento: {2}" +
+                "\nRenda Mensal: {3}" +
+                "\nEstado Civil: {4}" +
+                "\nDependentes: {5}", nome, cpf, dataNascimento.ToShortDateString, rendaMensal, estadoCivil, dependentes);
         }
     }
 }

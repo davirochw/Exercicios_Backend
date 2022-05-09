@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Ex05.src
 {
-    internal class Intervalo
+    public class Intervalo
     {
-        public DateTime dataInicial;
-        public DateTime dataFinal;
-        public TimeSpan duracao;
+        private DateTime dataInicial;
+        private DateTime dataFinal;
+        public DateTime DataInicial { get { return dataInicial; } set { dataInicial = value; } }
+        public DateTime DataFinal { get { return dataFinal; } set { dataFinal = value; } }
+        public TimeSpan duracao { get { return dataFinal - dataInicial; } }
 
         public Intervalo(DateTime dataInicial, DateTime dataFinal)
         {
@@ -21,17 +23,18 @@ namespace Ex05.src
 
             this.dataInicial = dataInicial;
             this.dataFinal = dataFinal;
-            duracao = dataFinal - dataInicial;
+
+            Console.WriteLine("\nA duração é: {0} dia(s)\n", duracao.Days);
         }
 
-        public bool TemIntersecao(Intervalo outroIntervalo)
+        public bool TemIntersecao()
         {
-            return (this.dataInicial <= outroIntervalo.dataFinal && this.dataFinal >= outroIntervalo.dataInicial);
+            return (this.dataInicial.Equals(this.dataFinal));
         }
 
-        public bool Igual(Intervalo outroIntervalo)
+        public bool Igual()
         {
-            if (this.dataInicial.Equals(outroIntervalo.dataInicial) && this.dataFinal.Equals(outroIntervalo.dataFinal))
+            if (this.dataInicial.Equals(this.dataFinal))
             {
                 Console.WriteLine("Intervalos iguais");
                 return true;

@@ -9,16 +9,8 @@ namespace Ex01.src
     internal class Piramide
     {
         private int n;
-
-        public int N
-        { 
-          get
-            {
-                return n;
-            }  
-
-          set
-            {
+        public int N { get { return n; } 
+            set {
                 if (value <= 0)
                 {
                     throw new SystemException();
@@ -36,7 +28,6 @@ namespace Ex01.src
 
         public void desenha()
         {
-
             int count = 0;
 
             for (int i = 1; i <= n; i++)

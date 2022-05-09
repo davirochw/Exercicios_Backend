@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Ex05/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Ex05.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ex05.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Ex05/1.0.0": {
+      "type": "project",
+      "path": "../Ex05/Ex05.csproj",
+      "msbuildProject": "../Ex05/Ex05.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Ex05 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\davi-\\.nuget\\packages\\": {},
@@ -14,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Exercicios01\\Ex06\\Ex06.csproj",
+      "projectUniqueName": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Ex06\\Ex06.csproj",
       "projectName": "Ex06",
-      "projectPath": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Exercicios01\\Ex06\\Ex06.csproj",
+      "projectPath": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Ex06\\Ex06.csproj",
       "packagesPath": "C:\\Users\\davi-\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Exercicios01\\Ex06\\obj\\",
+      "outputPath": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Ex06\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Ex05\\Ex05.csproj": {
+              "projectPath": "C:\\Users\\davi-\\Documents\\workspace\\Backend C#\\Exercicios01\\Ex05\\Ex05.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
